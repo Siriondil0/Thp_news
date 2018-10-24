@@ -19,18 +19,18 @@ i=0
   if i==0
     use = User.offset(rand(User.count)).first
     li = Link.offset(rand(Link.count)).first
-    comment = li.comments.create!(body: Faker::Dune.saying, user: use)
+    comment = li.comments.create!(body: Faker::HitchhikersGuideToTheGalaxy.quote, user: use)
     i+=1
   else
     i=rand(1..2)
     if i ==1
       use = User.offset(rand(User.count)).first
       li = Link.offset(rand(Link.count)).first
-      comment = li.comments.create!(body: Faker::Dune.saying, user: use)
+      comment = li.comments.create!(body: Faker::HitchhikersGuideToTheGalaxy.quote, user: use)
     else
       use = User.offset(rand(User.count)).first
       com = Comment.offset(rand(Comment.count)).first
-      comment = com.comments.create!(body: Faker::Dune.saying, user: use)
+      comment = com.comments.create!(body: Faker::HitchhikersGuideToTheGalaxy.quote, user: use)
     end
   end
 end
